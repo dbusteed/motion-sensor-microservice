@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motion Sensor Microservice</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td {
+            border: 1px solid black;
+        } 
+
+        td {
+            padding: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .filter-table td {
+            padding: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Motion Sensor Microservice</h1>
+    <table class="main-table">
+        <tr>
+            <td><code>/</code></td>
+            <td>This page</td>
+        </tr>
+        <tr>
+            <td><code>/addEvent</code></td>
+            <td>accepts POST requests with motion event data</td>
+        </tr>
+        <tr>
+            <td><code>/events</code></td>
+            <td>accepts GET requests and returns event data</td>
+        </tr>
+        <tr>
+            <td><code>/events?QUERY_PARAMS</code></td>
+            <td>
+                <table class="filter-table">
+                    <tr>
+                        <td><pre>id</pre></td>
+                        <td>return events that match id
+                            <br>
+                            ex: ?id=3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>deviceID</pre></td>
+                        <td>
+                            return events that match deviceID
+                            <br>
+                            ex: ?deviceID=42
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>deviceName</pre></td>
+                        <td>
+                            return events where param in deviceName
+                            <br>
+                            ex: ?deviceName=door
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>lte_timestamp</pre></td>
+                        <td>
+                            return events where events less than or equal to timestamp                            <br>
+                            ex: ?lte_timestamp=1590335155
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><pre>gte_timestamp</pre></td>
+                        <td>
+                            return events where events greater than or equal to timestamp                            <br>
+                            ex: ?gte_timestamp=1590335155
+                        </td>
+                    </tr>
+                </table>
+                <p>can combine multiple query parameters</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
